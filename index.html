@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Rivera | Nursing Student Portfolio</title>
+    <title>Alex Rivera | Nursing Game + Portfolio</title>
     <meta
       name="description"
-      content="Minimalist portfolio for a nursing student featuring education, clinical experience, projects, and contact details."
+      content="Minimalist nursing-themed game with a leaderboard and a streamlined portfolio."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -15,9 +15,9 @@
       <nav class="nav">
         <a class="logo" href="#top">AR</a>
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
+          <a href="#game">Game</a>
+          <a href="#leaderboard">Leaderboard</a>
+          <a href="#portfolio">Portfolio</a>
           <a href="#contact">Contact</a>
         </div>
         <a class="button ghost" href="mailto:hello@nursingportfolio.com">Email me</a>
@@ -27,151 +27,152 @@
     <main id="top">
       <section class="hero">
         <div class="hero-content">
-          <p class="eyebrow">Nursing student · Patient-centered care</p>
+          <p class="eyebrow">Nursing student · Calm in the chaos</p>
           <h1>Alex Rivera</h1>
           <p class="lead">
-            Nursing student focused on holistic care, clinical excellence, and patient advocacy. I enjoy
-            translating complex medical information into compassionate, easy-to-understand support.
+            I build patient-first experiences—both in clinical settings and through playful learning
+            tools. Welcome to my minimalist nursing game and portfolio.
           </p>
           <div class="hero-actions">
-            <a class="button" href="#contact">Start a conversation</a>
-            <a class="button ghost" href="resume.pdf">Download resume</a>
+            <a class="button" href="#game">Play the triage game</a>
+            <a class="button ghost" href="#portfolio">View portfolio</a>
           </div>
         </div>
         <div class="hero-card">
           <img
-            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
+            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=900&q=80"
             alt="Nursing student in a clinical setting"
           />
           <div class="hero-card-body">
             <p class="label">Currently</p>
             <p>B.S.N. Candidate, Class of 2026</p>
-            <p class="label">Location</p>
-            <p>Seattle, WA (open to relocation)</p>
+            <p class="label">Focus</p>
+            <p>Medical-surgical + community health</p>
           </div>
         </div>
       </section>
 
-      <section id="about" class="section">
+      <section id="game" class="section">
         <div class="section-header">
-          <h2>About</h2>
-          <p>Evidence-based care, empathy, and teamwork guide my approach.</p>
+          <h2>Triage Sprint</h2>
+          <p>Sort incoming patients fast. Choose the right priority before the timer ends.</p>
         </div>
-        <div class="grid two">
-          <div>
-            <p>
-              I am a junior nursing student with a passion for medical-surgical nursing and community
-              health. My clinical rotations have strengthened my skills in patient assessments,
-              medication administration, and interdisciplinary communication.
-            </p>
-            <p>
-              I value calm, organized workflows and create supportive environments for patients and
-              their families. I am seeking opportunities to contribute to a collaborative care team
-              while expanding my clinical competencies.
-            </p>
+        <div class="game-layout">
+          <div class="game-card">
+            <div class="game-header">
+              <div>
+                <p class="label">Shift timer</p>
+                <p class="stat" id="time-left">60s</p>
+              </div>
+              <div>
+                <p class="label">Score</p>
+                <p class="stat" id="score">0</p>
+              </div>
+              <div>
+                <p class="label">Streak</p>
+                <p class="stat" id="streak">0</p>
+              </div>
+            </div>
+            <div class="patient-card" id="patient-card">
+              <h3 id="patient-name">Press start to begin</h3>
+              <p id="patient-note">
+                You have 60 seconds to prioritize patients based on urgency. Accuracy boosts your
+                streak.
+              </p>
+            </div>
+            <div class="game-actions">
+              <button class="button" id="start-game">Start shift</button>
+              <div class="priority-buttons">
+                <button class="button ghost" data-priority="high">High priority</button>
+                <button class="button ghost" data-priority="medium">Routine care</button>
+                <button class="button ghost" data-priority="low">Supportive</button>
+              </div>
+            </div>
+            <p class="game-hint" id="game-hint">Tip: Airway & circulation = high priority.</p>
           </div>
-          <ul class="highlights">
-            <li>
-              <span>Clinical skills</span>
-              <p>Vitals, head-to-toe assessment, wound care, IV therapy.</p>
-            </li>
-            <li>
-              <span>Certifications</span>
-              <p>BLS, HIPAA, Infection Control, Patient Safety.</p>
-            </li>
-            <li>
-              <span>Languages</span>
-              <p>English, Spanish (conversational).</p>
-            </li>
-          </ul>
+          <div class="game-notes">
+            <h3>How it works</h3>
+            <ul>
+              <li>Match each patient to the correct urgency level.</li>
+              <li>Correct answers add 10 points and build your streak.</li>
+              <li>Missed calls remove 5 points and reset the streak.</li>
+            </ul>
+            <div class="mini-card">
+              <p class="label">Clinical snapshot</p>
+              <p>
+                "I practice calm, clear triage communication to make every patient feel safe while
+                keeping the unit moving." - Alex
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="experience" class="section">
+      <section id="leaderboard" class="section">
         <div class="section-header">
-          <h2>Clinical experience</h2>
-          <p>Recent rotations and hands-on practice.</p>
+          <h2>Leaderboard</h2>
+          <p>Top scores from recent shifts (stored locally in your browser).</p>
         </div>
-        <div class="timeline">
-          <article>
-            <div>
-              <h3>Medical-Surgical Rotation</h3>
-              <p class="meta">Harborview Medical Center · 2024</p>
-            </div>
-            <ul>
-              <li>Conducted comprehensive patient assessments and documented care plans.</li>
-              <li>Collaborated with RNs and CNAs on daily care routines and discharge planning.</li>
-              <li>Provided patient education on post-op recovery and medication adherence.</li>
-            </ul>
-          </article>
-          <article>
-            <div>
-              <h3>Community Health Clinic</h3>
-              <p class="meta">Rainier Family Health · 2023</p>
-            </div>
-            <ul>
-              <li>Assisted with wellness screenings and vaccine clinics.</li>
-              <li>Observed interdisciplinary case conferences for chronic care management.</li>
-              <li>Promoted health literacy through clear, culturally sensitive education.</li>
-            </ul>
-          </article>
+        <div class="leaderboard-layout">
+          <ol class="leaderboard" id="leaderboard-list"></ol>
+          <div class="leaderboard-form">
+            <h3>Save your score</h3>
+            <p class="muted">Finish a game to unlock the save button.</p>
+            <label>
+              Name
+              <input type="text" id="player-name" placeholder="Your name" maxlength="20" />
+            </label>
+            <button class="button" id="save-score" disabled>Save to leaderboard</button>
+          </div>
         </div>
       </section>
 
-      <section id="projects" class="section">
+      <section id="portfolio" class="section">
         <div class="section-header">
-          <h2>Projects & leadership</h2>
-          <p>Highlights that showcase initiative and teamwork.</p>
+          <h2>Portfolio</h2>
+          <p>Patient-centered care, clinical growth, and collaborative leadership.</p>
         </div>
         <div class="grid three">
           <article class="card">
-            <h3>Senior capstone proposal</h3>
+            <h3>Clinical experience</h3>
+            <p class="meta">Harborview Medical Center · 2024</p>
             <p>
-              Designing a patient education toolkit to improve medication adherence for post-discharge
-              cardiac patients.
-            </p>
-            <a href="#">View outline</a>
-          </article>
-          <article class="card">
-            <h3>Nursing peer mentor</h3>
-            <p>
-              Supported first-year nursing students with study planning, lab preparation, and
-              clinical readiness.
-            </p>
-            <a href="#">Program details</a>
-          </article>
-          <article class="card">
-            <h3>Health equity volunteer</h3>
-            <p>
-              Partnered with local organizations to deliver blood pressure screenings and health
+              Completed medical-surgical rotations with focus on assessment, IV therapy, and discharge
               education.
             </p>
-            <a href="#">Volunteer recap</a>
+          </article>
+          <article class="card">
+            <h3>Community health</h3>
+            <p class="meta">Rainier Family Health · 2023</p>
+            <p>
+              Supported vaccine clinics, wellness screenings, and health literacy workshops for
+              underserved communities.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Leadership</h3>
+            <p class="meta">Student Nurses Association</p>
+            <p>
+              Planned peer mentoring sessions, simulation labs, and stress-reduction resources for
+              incoming cohorts.
+            </p>
           </article>
         </div>
-      </section>
-
-      <section class="section">
-        <div class="section-header">
-          <h2>Education</h2>
-          <p>Academic background and coursework.</p>
-        </div>
         <div class="grid two">
-          <div class="card">
-            <h3>Bachelor of Science in Nursing</h3>
-            <p class="meta">University of Washington · 2022 - 2026</p>
-            <ul>
-              <li>GPA: 3.8</li>
-              <li>Honors: Dean's List (4 semesters)</li>
-              <li>Relevant coursework: Pathophysiology, Pharmacology, Maternal-Child Nursing</li>
+          <div>
+            <h3>Core skills</h3>
+            <ul class="clean-list">
+              <li>Vitals, head-to-toe assessment, wound care</li>
+              <li>Medication administration + patient education</li>
+              <li>Interdisciplinary communication + charting</li>
             </ul>
           </div>
-          <div class="card">
-            <h3>Leadership</h3>
-            <ul>
-              <li>Student Nurses Association, Events Coordinator</li>
-              <li>Simulation Lab Assistant</li>
-              <li>Volunteer, Seattle Community Health Fair</li>
+          <div>
+            <h3>Certifications</h3>
+            <ul class="clean-list">
+              <li>BLS · HIPAA · Infection Control</li>
+              <li>Patient Safety · Cultural Competency</li>
+              <li>Spanish (conversational)</li>
             </ul>
           </div>
         </div>
@@ -180,7 +181,7 @@
       <section class="section" id="contact">
         <div class="section-header">
           <h2>Contact</h2>
-          <p>Let's connect about clinical opportunities and collaborations.</p>
+          <p>Let’s collaborate on clinical opportunities and learning experiences.</p>
         </div>
         <div class="contact-card">
           <div>
@@ -209,8 +210,175 @@
     </main>
 
     <footer class="site-footer">
-      <p>© 2024 Alex Rivera · Nursing student portfolio</p>
-      <p class="small">Customize the colors, text, and links in this template to make it yours.</p>
+      <p>© 2024 Alex Rivera · Nursing game + portfolio</p>
+      <p class="small">Designed with clarity, empathy, and minimalist focus.</p>
     </footer>
+
+    <script>
+      const scenarios = [
+        {
+          name: "Evelyn Grant, 68",
+          note: "Shortness of breath, O2 saturation 88%, labored breathing.",
+          priority: "high",
+        },
+        {
+          name: "Noah Patel, 22",
+          note: "Sprained ankle, stable vitals, pain 4/10.",
+          priority: "low",
+        },
+        {
+          name: "Maya Chen, 45",
+          note: "Chest pain radiating to left arm, diaphoretic.",
+          priority: "high",
+        },
+        {
+          name: "Luis Romero, 31",
+          note: "Fever 101°F, sore throat, no respiratory distress.",
+          priority: "medium",
+        },
+        {
+          name: "Harper Sloan, 55",
+          note: "Post-op dressing saturated, BP 88/54.",
+          priority: "high",
+        },
+        {
+          name: "Amira Khan, 10",
+          note: "Mild asthma flare, speaks in full sentences.",
+          priority: "medium",
+        },
+        {
+          name: "Jordan Lee, 73",
+          note: "Dizzy after standing, stable vitals, needs hydration.",
+          priority: "medium",
+        },
+        {
+          name: "Priya Desai, 39",
+          note: "Laceration requiring sutures, controlled bleeding.",
+          priority: "low",
+        },
+      ];
+
+      const patientName = document.getElementById("patient-name");
+      const patientNote = document.getElementById("patient-note");
+      const timeLeft = document.getElementById("time-left");
+      const scoreEl = document.getElementById("score");
+      const streakEl = document.getElementById("streak");
+      const gameHint = document.getElementById("game-hint");
+      const startButton = document.getElementById("start-game");
+      const priorityButtons = document.querySelectorAll("[data-priority]");
+      const leaderboardList = document.getElementById("leaderboard-list");
+      const saveButton = document.getElementById("save-score");
+      const playerNameInput = document.getElementById("player-name");
+
+      let currentScenario = null;
+      let score = 0;
+      let streak = 0;
+      let timer = null;
+      let remaining = 60;
+      let canPlay = false;
+
+      const defaultLeaders = [
+        { name: "Nova", score: 80 },
+        { name: "Kai", score: 70 },
+        { name: "Riley", score: 60 },
+        { name: "Jordan", score: 50 },
+        { name: "Avery", score: 40 },
+      ];
+
+      const loadLeaders = () => {
+        const stored = localStorage.getItem("triage-leaderboard");
+        return stored ? JSON.parse(stored) : defaultLeaders;
+      };
+
+      const saveLeaders = (leaders) => {
+        localStorage.setItem("triage-leaderboard", JSON.stringify(leaders));
+      };
+
+      const renderLeaders = () => {
+        const leaders = loadLeaders();
+        leaderboardList.innerHTML = "";
+        leaders.forEach((leader) => {
+          const li = document.createElement("li");
+          li.innerHTML = `<span>${leader.name}</span><span>${leader.score}</span>`;
+          leaderboardList.appendChild(li);
+        });
+      };
+
+      const setScenario = () => {
+        currentScenario = scenarios[Math.floor(Math.random() * scenarios.length)];
+        patientName.textContent = currentScenario.name;
+        patientNote.textContent = currentScenario.note;
+      };
+
+      const resetGame = () => {
+        score = 0;
+        streak = 0;
+        remaining = 60;
+        scoreEl.textContent = score;
+        streakEl.textContent = streak;
+        timeLeft.textContent = `${remaining}s`;
+        saveButton.disabled = true;
+        gameHint.textContent = "Tip: Airway & circulation = high priority.";
+      };
+
+      const endGame = () => {
+        clearInterval(timer);
+        canPlay = false;
+        timeLeft.textContent = "Shift ended";
+        gameHint.textContent = "Shift complete. Save your score to the leaderboard.";
+        saveButton.disabled = false;
+      };
+
+      const startGame = () => {
+        resetGame();
+        setScenario();
+        canPlay = true;
+        timer = setInterval(() => {
+          remaining -= 1;
+          timeLeft.textContent = `${remaining}s`;
+          if (remaining <= 0) {
+            endGame();
+          }
+        }, 1000);
+      };
+
+      priorityButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (!canPlay || !currentScenario) return;
+          const answer = button.dataset.priority;
+          if (answer === currentScenario.priority) {
+            score += 10;
+            streak += 1;
+            gameHint.textContent = "Nice call. Stay focused.";
+          } else {
+            score = Math.max(0, score - 5);
+            streak = 0;
+            gameHint.textContent = "Reassess priorities and try the next patient.";
+          }
+          scoreEl.textContent = score;
+          streakEl.textContent = streak;
+          setScenario();
+        });
+      });
+
+      startButton.addEventListener("click", () => {
+        if (timer) clearInterval(timer);
+        startGame();
+      });
+
+      saveButton.addEventListener("click", () => {
+        const name = playerNameInput.value.trim() || "Anonymous";
+        const leaders = loadLeaders();
+        leaders.push({ name, score });
+        leaders.sort((a, b) => b.score - a.score);
+        const trimmed = leaders.slice(0, 5);
+        saveLeaders(trimmed);
+        renderLeaders();
+        playerNameInput.value = "";
+        saveButton.disabled = true;
+      });
+
+      renderLeaders();
+    </script>
   </body>
 </html>
