@@ -11,6 +11,16 @@
 
 _Create a site or blog from your GitHub repositories with GitHub Pages._
 
+## Deploy to GitHub Pages
+
+1. Push this repository to GitHub.
+2. In your repository, open **Settings → Pages**.
+3. Under **Build and deployment**, select **Deploy from a branch**.
+4. Choose the branch you want to publish (for example, `main`) and the root folder.
+5. Save. GitHub Pages will publish `index.html` and `styles.css` from the repository root.
+
+> Tip: This project includes a `.nojekyll` file to ensure GitHub Pages serves the site as static assets.
+
 </header>
 
 <!--
